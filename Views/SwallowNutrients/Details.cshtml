@@ -1,0 +1,35 @@
+﻿@model FoodPlanner.Models.Swallows.SwallowNutrient
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layoutkazz.cshtml";
+    var ingswallow = (List<FoodPlanner.Models.Swallows.Swallow>)ViewData["swallows"];
+    var mainIngrdient = (List<FoodPlanner.Models.MainIngredients.MainIngredient>)ViewData["mainIngredients"];
+    int indSwallow = (int)ViewData["indSwallow"];
+    int indSwallowNutrient = (int)ViewData["indSwallowNutrient"];
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card card-default">
+
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4"> @Html.DisplayNameFor(model => model.SwallowName)</dt>
+                        <dd class="col-sm-8"> @ingswallow[indSwallowNutrient].Name</dd>
+                        <dt class="col-sm-4"> @Html.DisplayNameFor(model => model.MainIngredientsId)</dt>
+                        <dd class="col-sm-8">@mainIngrdient[indSwallow].Name</dd>
+
+                    </dl>
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </section>
+</div>

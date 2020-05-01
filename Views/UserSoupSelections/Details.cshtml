@@ -1,0 +1,35 @@
+﻿@model FoodPlanner.Models.UserFoodSelectionCategory.UserSoupSelection
+
+@{
+    ViewData["Title"] = "Details";
+    var inguserswallow = (List<FoodPlanner.Models.Soups.Soup>)ViewData["userswallow"];
+    int indUserSoupSelection = (int)ViewData["indUserSoupSelection"];
+}
+
+<div class="modal-header">
+
+    <h4 class="modal-title">Edit Document</h4>
+
+
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+</div>
+<div class="modal-body p-4" id="modalBody">
+    <div>
+        <h4>Light Food Dish Soup</h4>
+        <hr />
+
+        <dl class="row">
+            @Html.HiddenFor(x => x.Id)
+            @Html.HiddenFor(x => x.UserId)
+            <dt class="col-sm-4"> @Html.DisplayNameFor(model => model.UserSoupId)</dt>
+            <dd class="col-sm-8"> @inguserswallow[indUserSoupSelection].Name</dd>
+
+
+
+        </dl>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+</div>

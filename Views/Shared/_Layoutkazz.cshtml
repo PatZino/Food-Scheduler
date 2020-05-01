@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layoutkazz</title>
+
+    <link href="~/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="~/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/plugins/jqvmap/jqvmap.min.css" rel="stylesheet" />
+    <link href="~/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
+    <link href="~/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <link href="~/dist/css/adminlte.min.css" rel="stylesheet" />
+    <link href="~/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
+    <link href="~/dist/sweetalert2.min.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+
+
+    @await Html.PartialAsync("_NavBar")
+
+    @await Html.PartialAsync("_MainMenu")
+
+
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
